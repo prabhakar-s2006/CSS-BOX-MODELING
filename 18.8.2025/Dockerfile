@@ -1,3 +1,3 @@
 FROM httpd:alpine
-COPY . /usr/local/apache2/htdocs/
+COPY  18.8.2025 /usr/local/apache2/htdocs/
 EXPOSE 80
