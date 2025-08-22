@@ -1,0 +1,27 @@
+show databases;
+create database prabha;
+use prabha;
+create table ece(
+id int,
+name varchar(30),
+marks int
+);
+show tables from prabha;
+select * from ece;
+create table Edetails(
+EID int,
+name varchar(30),
+address varchar(30)
+);
+insert into Edetails(EID,name ,address)
+values(1,'prabha','addr1'),(2,'raghul','addr2'),(3,'dhanush','addr3');
+alter table Edetails
+add column email varchar(30);
+select * from Edetails;
+drop table Edetails;
+alter table eDetails rename column
+address to addr;
+set sql_safe_updates=0;
+update Edetails set name='raghul' , addr='addr2'
+where EID=3;
+update edetails set eid=eid+1;
