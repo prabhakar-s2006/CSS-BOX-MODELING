@@ -18,14 +18,14 @@ NAME varchar(30),
 ADDRESS varchar(30)
 );
 insert into Edetails(Eid,name,address)
-values (1,'mouneesh1','ad1'),(2,'praba','ad2'),(3,'nithi','ad2');
+values (1,'mouneesh1','ad1'),(2,'praba','ad2'),(3,'nithish','ad2');
 desc Edetails;
 drop table edetails;
 alter table edetails
 add column email varchar(30);
 select  from edetails;
-update edetails set name='nithish'where name='nithi';
-update edetails set email=mouneesh@gmail.com where name=mouneesh1;
+update edetails set name='nithi'where name='nithish';
+update edetails set email=prabha@gmail.com where name=prabha;
 SET SQL_SAFE_UPDATES = 0;
 alter table edetails drop column email;
 
@@ -38,10 +38,11 @@ UPDATE edetails SET marks = 96 WHERE eid = 1;
 UPDATE edetails SET marks = 50 WHERE eid = 2;
 UPDATE edetails SET marks = 30 WHERE eid = 3;
 
-DELETE FROM EDETAILS WHERE name=nithish;
+DELETE FROM EDETAILS WHERE name=nithi;
 start transaction;
 savepoint a;
 DELETE FROM EDETAILS WHERE MARKS=50;
 rollback to a;
 DELETE FROM EDETAILS WHERE MARKS=50;
+
 commit;
