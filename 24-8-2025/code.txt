@@ -33,10 +33,6 @@ INSERT INTO labour VALUES
 (2, 'prabha', 55000),
 (3, 'mouneesh', 30000),
 (4, 'nitish', 45000);
-INSERT INTO labour VALUES
-(5, 'pranesh', 38000),
-(6, 'kowshick', 60000),
-(7, 'mujasir', 42000);
 SELECT labour_name AS sn FROM labour;
 select * from labour where labour_name like '_a%';
 create view 20k_above as
@@ -68,4 +64,5 @@ public class GradeSystem {
         System.out.println("grade: " + grade);
      }
 }
+
 
