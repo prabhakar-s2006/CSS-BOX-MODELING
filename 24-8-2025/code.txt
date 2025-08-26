@@ -1,0 +1,71 @@
+create database cl;
+use cl;
+create table college(
+cl_id int primary key auto_increment,
+cl_name varchar(30) not null
+);
+insert into college(cl_name) values('jeppiar'),('stjoseph'),('sathyabama');
+select * from college;
+create table department(
+dep_id int primary key auto_increment,
+dep_name varchar(30) not null,
+cl_id int,
+foreign key(cl_id) references college(cl_id)
+);
+insert into department(dep_name,cl_id) values ('CSE',1),('ECE',1),('CSE',2),('ECE',2),('CSE',3),('ECE',3);
+select * from department;
+create table student( 
+std_id int primary key auto_increment,
+std_name varchar(30),
+std_address varchar(50)
+);
+
+
+create database info;
+use info;
+CREATE TABLE labour (
+    labour_id INT PRIMARY KEY,
+    labour_name VARCHAR(50) NOT NULL,
+    salary int  NOT NULL
+);
+INSERT INTO labour VALUES
+(1, 'raghul', 20000),
+(2, 'prabha', 55000),
+(3, 'mouneesh', 30000),
+(4, 'nitish', 45000);
+INSERT INTO labour VALUES
+(5, 'pranesh', 38000),
+(6, 'kowshick', 60000),
+(7, 'mujasir', 42000);
+SELECT labour_name AS sn FROM labour;
+select * from labour where labour_name like '_a%';
+create view 20k_above as
+select * from labour where salary>30000;
+select * from 20k_above;
+
+//// JAVA CODE /////
+
+import java.util.Scanner;
+public class GradeSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the marks: ");
+        int marks = sc.nextInt();
+        char grade;
+        if (marks < 25) {
+            grade = 'F';
+        } else if (marks >= 25 && marks < 45) {
+            grade = 'E';
+        } else if (marks >= 45 && marks < 50) {
+            grade = 'D';
+        } else if (marks >= 50 && marks < 60) {
+            grade = 'C';
+        } else if (marks >= 60 && marks <= 80) {
+            grade = 'B';
+        } else {
+            grade = 'A';
+        }
+        System.out.println("grade: " + grade);
+     }
+}
+
