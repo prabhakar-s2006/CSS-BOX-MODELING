@@ -1,0 +1,149 @@
+--------------Extends Method--------------------------
+
+ public class ExtendsExample
+{
+    public static void main(String[] args) 
+    {
+        Son1 s1 = new Son1();
+        s1.bike();            
+        s1.bike("Orange");    
+
+        Son2 s2 = new Son2();
+        s2.bike();            
+        s2.bike(2025);      
+        s2.oldBike();         
+    }
+}
+
+class GrandFather
+{
+    void oldBike()
+    {
+        System.out.println("Royal Enfield 1983");
+    }
+}
+
+class Father extends GrandFather
+{
+    
+    void oldBike()
+    {
+        System.out.println("Royal Enfield 2002");
+    }
+
+    // Overloaded method
+    void oldBike(String color)
+    {
+        System.out.println("Royal Enfield 2002 - Color: " + color);
+    }
+}
+
+class Son1 extends Father
+{
+    
+    void bike()
+    {
+        System.out.println("KTM 390");
+    }
+
+    
+    void bike(String color)
+    {
+        System.out.println("KTM 390 - Color: " + color);
+    }
+}
+
+class Son2 extends Father
+{
+    
+    void bike()
+    {
+        System.out.println("RC KTM 390");
+    }
+
+    void bike(int modelYear)
+    {
+        System.out.println("RC KTM 390 - Model: " + modelYear);
+    }
+}
+
+
+------------------Encapsulation-----------------------
+package firstDay;
+
+class FirstClass {
+    private String name;
+
+    public void setName(String n) {
+        name = n;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+public class EncapsulationExample {
+    public static void main(String[] args) {
+
+        Person p = new Person();
+
+        p.setName("Prabha");
+        System.out.println(p.getName());
+    }
+}
+
+-------------Polymorphism----------------------------------
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class PolymorphismExample {
+    public static void main(String[] args) {
+
+        Animal a;  
+        a = new Dog();          
+        a.sound();      
+        a = new Cat();  
+        a.sound();          
+    }
+}
+
+
+------------------Exceptional Handling----------------------
+
+
+
+public class ExceptionalHandlingExample
+ {
+    public static void main(String[] args) {
+
+        try {
+            int a = 14;
+            int b = 0;
+            int result = a / b;
+            System.out.println(result);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        }
+        finally {
+            System.out.println("Program ended");
+        }
+    }
+}
